@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
+      <!--fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Piano Store</title>
+  </head>
+  <body onload="setProductDetails()">
+    <header class="header">
+      <div class="header-inner">
+        <div class="container-fluid px-lg-5">
+
+          <div id="authenticatedUser">
+            <nav class="navbar navbar-expand-lg my-navbar">
+              <a class="navbar-brand" href="index.html"><span class="logo">
+                <img src="../img/logo.png" class="img-fluid" style="width:30px; margin:-3px 0px 0px 0px;"> Piano Store</span>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars" style="margin:5px 0px 0px 0px;"></i></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="contactpage.html">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="myprofile.html">My Profile</a>
+                  </li> 
+                  <li class="nav-item dropdown">
+                    <a href="addproduct.html"></a>
+                    <a class="nav-link dropdown-toggle" href="myprofile.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      My Products
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="products.html">Products</a>
+                      <a class="dropdown-item" href="favorites.html">Favorites</a>
+                      <a class="dropdown-item" href="productDetails.html">Product Detalis</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="addproduct.html">Add Product</a>
+                    </div>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="cart.html">Cart<span class="sr-only">(current)</span></a>
+                  </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                
+                  <a>
+                    <input onclick="logOut()" type="button" class="header-btn my-2 my-sm-0" value="Log out">
+                  </a>
+                  
+                </form>
+              </div>
+            </nav>
+          </div>
+          <div id="notAuthenticatedUser">
+            <nav class="navbar navbar-expand-lg my-navbar">
+              <a class="navbar-brand" href="index.html"><span class="logo">
+                <img src="../img/logo.png" class="img-fluid" style="width:30px; margin:-3px 0px 0px 0px;"> Piano Store</span>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars" style="margin:5px 0px 0px 0px;"></i></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="products.html">Products<span class="sr-only">(current)</span></a>
+                  </li>
+                                    
+                  <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contactpage.html">Contact</a>
+                  </li>
+                
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                <a href="register.html">  
+                  <input onclick="register()" type="button" class="header-btn my-2 my-sm-0" value="Register">
+                </a>
+                <a href="login.html">  
+                  <input onclick="login()" type="button" class="header-btn my-2 my-sm-0" value="Login">
+                </a>
+                
+                </form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+      
+      
+      <section class="content-banner">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-12">
+              <div class="banner-con text-center">
+                <p class="first-title">Products detalis</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <div class="main-content">
+        <section>
+          <div class="container">
+              <p id="messagePanel"></p>
+              <div id="productDetailsId" class="row" >
+                
+                  
+              </div>
+            </div>
+        </section>
+
+         <!-- START Bootstrap-Cookie-Alert -->
+          <div class="alert text-center cookiealert" role="alert">
+            <b>Do you like cookies?</b> &#x1F36A; We use cookies to ensure you get the best experience on our website. <a href="https://cookiesandyou.com/" target="_blank">Learn more</a>
+          
+            <button type="button" class="btn btn-primary btn-md acceptcookies">
+                I agree
+            </button>
+          </div>
+         <!-- END Bootstrap-Cookie-Alert -->
+
+         <div class="icon-bar">
+          <a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a>
+          <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.google.ro/" class="google"><i class="fa fa-google"></i></a>
+          <a href="https://ro.linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/" class="youtube"><i class="fa fa-youtube"></i></a>
+        </div> 
+
+        <section>
+          <div class="container">
+                  <h2>Your journey starts here.</h2>
+                  <p> Hence, Piano Store was born in 2021 and the first location was on Bucharest.  This family owned and operated, small business piano store, began to thrive and gain a reputation for the quality pianos, competitive pricing and the very heartfelt customer service Geroge gave to his customers.</p>
+                  <p>Further, he launched a non-profit that helps place donated pianos into the hands of organizations and individuals who could not otherwise afford it. George is also known for his genuine support and generosity through financial donations and providing pianos for many local community events.</p>
+                  <p><strong>Realizing his customers were nationwide, George has developed an online platform making it easier for customers to find  the  perfect piano for them using his web platforms through social media and here, on his customer-focused website!</strong></p>
+                  
+              </div>
+        </section>
+        <footer class="bg-light text-center text-lg-start">
+          <!-- Grid container -->
+          <div class="container col-lg-6 pt-5 ">
+            
+          </div>
+                
+          
+          <div class="container p-4 pb-0">
+            <div class="container my-4 px-0">
+              <h2>This is it. You've made it so far. There is no going back.</h2>
+              <p> </p>
+              <p>Sign up for our newsletter for more pianos:</p>
+            </div>
+            <form action="">
+              <!--Grid row-->
+              <div class="row">
+                <!--Grid column-->
+                <div class="col-auto mb-4 mb-md-0">
+                  <p class="pt-2"></p>
+                </div>
+                <!--Grid column-->
+        
+                <!--Grid column-->
+                <div class="col-md-4 col-12 mb-4 mb-md-0 ">
+                  <!-- Email input -->
+                  <div class="form-outline">
+                    <input type="email" id="form5Example2" class="form-control" />
+                    <label class="form-label" for="form5Example2"></label>
+                  </div>
+                </div>
+                <!--Grid column-->
+        
+                <!--Grid column-->
+                <div class="col-auto mb-4 mb-md-0">
+                  <!-- Submit button -->
+                  <button type="submit" class="btn btn-primary mb-4">Subscribe</button>
+                </div>
+              </div>
+              <!--Grid row-->
+            </form>
+          </div>
+          <!-- Grid container -->
+        
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(141, 141, 141, 0.2)">
+            © 2021 Copyright
+            <a class="text-dark" href=""></a>
+          </div>
+        </footer>
+          </div>
+          <!-- Grid container -->
+        
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(141, 141, 141, 0.2)">
+            © 2021 Copyright
+            <a class="text-dark" href=""></a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+      </div>
+  
+  
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+      <script type="text/javascript">
+        $(function(){
+          var navbar = $('.header-inner');
+          $(window).scroll(function(){
+            if($(window).scrollTop() <=40){
+              navbar.removeClass('navbar-scroll');
+            }else{
+              navbar.addClass('navbar-scroll');
+            }
+          });
+        });
+      </script>   
+      <script src="../script/models/user.js"></script>
+      <script src="../script/models/product.js"></script>
+      <script src="../script/models/review.js"></script>
+      <script src="../script/services/commonService.js"></script>
+      <script src="../script/services/httpService.js"></script>
+      <script src="../script/script.js"></script>
+
+  </body>
+</html>
